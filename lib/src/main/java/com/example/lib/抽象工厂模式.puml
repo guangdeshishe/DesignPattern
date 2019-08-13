@@ -1,0 +1,50 @@
+@startuml
+
+abstract class MobilePhone{
+    call()
+}
+
+class XiaoMiMobilePhone{
+    call()
+}
+
+class HuaWeiMobilePhone{
+    call()
+}
+
+abstract class Pad{
+    call()
+}
+
+class XiaoMiPad{
+    call()
+}
+
+class HuaWeiPad{
+    call()
+}
+
+abstract class Factory{
+    + createMobile(): MobilePhone
+    + createPad(): Pad
+}
+
+class XiaoMiFactory{
+    + createMobile(): XiaoMiMobilePhone
+    + createPad(): XiaoMiPad
+}
+
+class HuaWeiFactory{
+    + createMobile(): HuaWeiMobilePhone
+    + createPad(): HuaWeiPad
+}
+
+MobilePhone <|.. XiaoMiMobilePhone
+MobilePhone <|.. HuaWeiMobilePhone
+Pad <|.. XiaoMiPad
+Pad <|.. HuaWeiPad
+Factory <|.. XiaoMiFactory
+Factory <|.. HuaWeiFactory
+
+
+@enduml

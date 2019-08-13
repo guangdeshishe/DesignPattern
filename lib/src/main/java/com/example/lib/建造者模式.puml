@@ -1,0 +1,44 @@
+@startuml
+
+abstract class SmartDevice{
+     displayer : String
+     cpu : String
+     system :  String
+    + setDisplayer(String)
+    + setCpu(String)
+    + setSystem(String)
+}
+
+class MobilePhone {
+    + setDisplayer(String)
+    + setCpu(String)
+    + setSystem(String)
+}
+
+abstract class SmartDeviceBuilder{
+    + buildDisplayer(String)
+    + buildCpu(String)
+    + buildSystem(String)
+    + createDevice() : SmartDevice
+}
+
+class MobilePhoneBuilder{
+    - device : SmartDevice
+    + buildDisplayer(String)
+    + buildCpu(String)
+    + buildSystem(String)
+    + createDevice() : SmartDevice
+}
+
+class SmartDeviceDirector{
+    -builder : SmartDeviceBuilder
+    + Director(SmartDeviceBuilder)
+    + create(String,String,String) : SmartDevice
+}
+
+
+SmartDeviceBuilder <|.. MobilePhoneBuilder
+SmartDevice <|.. MobilePhone
+SmartDeviceBuilder <.. SmartDeviceDirector
+
+@enduml
