@@ -39,12 +39,12 @@ class HuaWeiFactory{
     + createPad(): HuaWeiPad
 }
 
-MobilePhone <|.. XiaoMiMobilePhone
-MobilePhone <|.. HuaWeiMobilePhone
-Pad <|.. XiaoMiPad
-Pad <|.. HuaWeiPad
-Factory <|.. XiaoMiFactory
-Factory <|.. HuaWeiFactory
+MobilePhone <|-- XiaoMiMobilePhone
+MobilePhone <|-- HuaWeiMobilePhone
+Pad <|-- XiaoMiPad
+Pad <|-- HuaWeiPad
+Factory <|-- XiaoMiFactory
+Factory <|-- HuaWeiFactory
 
 
 @enduml

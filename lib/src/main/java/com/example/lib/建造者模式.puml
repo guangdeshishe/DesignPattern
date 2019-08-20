@@ -37,8 +37,8 @@ class SmartDeviceDirector{
 }
 
 
-SmartDeviceBuilder <|.. MobilePhoneBuilder
-SmartDevice <|.. MobilePhone
-SmartDeviceBuilder <.. SmartDeviceDirector
+SmartDeviceBuilder <|-- MobilePhoneBuilder
+SmartDevice <|-- MobilePhone
+SmartDeviceBuilder <-- SmartDeviceDirector
 
 @enduml

@@ -1,36 +1,37 @@
 @startuml
 
 abstract class Window {
-WindowManager
-setWindowManager()
+-WindowManager mWindowManager
++setWindowManager()
 }
 
 class PhoneWindow{
-    setWindowManager
+    +setWindowManager()
 }
 
 interface ViewManager{
-    addView()
-    updateViewLayout()
-    removeView()
+    +addView()
+    +updateViewLayout()
+    +removeView()
 }
 
 interface WindowManager{
-    addView()
-    updateViewLayout()
-    removeView()
+    +class LayoutParams{}
+    +addView()
+    +updateViewLayout()
+    +removeView()
 }
 
 class WindowManagerImpl{
-    WindowManagerGlobal
-    addView()
-    updateViewLayout()
-    removeView()
+    -WindowManagerGlobal mGlobal
+    +addView()
+    +updateViewLayout()
+    +removeView()
 }
 
-PhoneWindow <|-- Window
-WindowManager <|-- ViewManager
-WindowManagerImpl <-- PhoneWindow
-WindowManagerImpl <|.. WindowManager
+Window<|--  PhoneWindow
+ViewManager <|-- WindowManager
+WindowManager <-- Window
+WindowManager<|..  WindowManagerImpl
 
 @enduml

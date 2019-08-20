@@ -16,8 +16,8 @@ class MobilePhoneFactory{
     + createMobile(String): MobilePhone
 }
 
-MobilePhone <|.. XiaoMiMobilePhone
-MobilePhone <|.. HuaWeiMobilePhone
+MobilePhone <|-- XiaoMiMobilePhone
+MobilePhone <|-- HuaWeiMobilePhone
 XiaoMiMobilePhone <.. MobilePhoneFactory
 HuaWeiMobilePhone <.. MobilePhoneFactory
 

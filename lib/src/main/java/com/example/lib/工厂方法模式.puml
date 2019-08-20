@@ -24,10 +24,10 @@ class HuaWeiMobilePhoneFactory{
     + createMobile(): HuaWeiMobilePhone
 }
 
-MobilePhone <|.. XiaoMiMobilePhone
-MobilePhone <|.. HuaWeiMobilePhone
-MobilePhoneFactory <|.. XiaoMiMobilePhoneFactory
-MobilePhoneFactory <|.. HuaWeiMobilePhoneFactory
+MobilePhone <|-- XiaoMiMobilePhone
+MobilePhone <|-- HuaWeiMobilePhone
+MobilePhoneFactory <|-- XiaoMiMobilePhoneFactory
+MobilePhoneFactory <|-- HuaWeiMobilePhoneFactory
 
 
 @enduml

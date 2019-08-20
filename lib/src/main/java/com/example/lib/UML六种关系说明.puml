@@ -1,0 +1,44 @@
+@startuml
+class ImageLoader{
+    loadImage(ImageInfo)
+}
+
+class ImageInfo{
+}
+
+ImageInfo <.. ImageLoader :依赖关系
+
+class Window {
+-WindowManager mWindowManager
+}
+
+class WindowManager
+
+WindowManager <-- Window:关联关系
+
+class Company
+class Department
+Company o-- Department:聚合关系
+
+class Bird
+class Wing
+Bird *-- Wing:组合关系
+
+abstract class Factory
+class PhoneFactory
+class CarFactory
+Factory <|-- PhoneFactory:泛化关系
+Factory <|-- CarFactory:也就是继承关系
+
+interface IColorDraw{
+    draw()
+}
+class RedColorDraw{
+    draw()
+}
+class BlueColorDraw{
+    draw()
+}
+IColorDraw <|.. RedColorDraw:实现关系
+IColorDraw <|.. BlueColorDraw:实现某个接口
+@enduml
