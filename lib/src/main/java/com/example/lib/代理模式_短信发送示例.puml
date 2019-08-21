@@ -1,0 +1,22 @@
+@startuml
+interface SmsFunction{
+    sendSms()
+}
+class SmsApp{
+    +sendSms()
+}
+class SmsSendProxy {
+    - mSmsSender : SmsFunction
+    +SmsSendProxy()
+    +sendSms()
+}
+class Client{
+    +main()
+}
+
+SmsFunction <|.. SmsApp
+SmsFunction <|.. SmsSendProxy
+SmsFunction <-- SmsSendProxy
+SmsApp <.. Client
+SmsSendProxy <.. Client
+@enduml
