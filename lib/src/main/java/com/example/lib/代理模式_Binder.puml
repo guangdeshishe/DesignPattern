@@ -1,0 +1,29 @@
+@startuml
+interface IBookManager{
+    addBook()
+}
+interface IBinder{
+    +transact()
+}
+class Binder{
+    +transact()
+}
+abstract class Stub{
+    + asInterface()
+    + asBinder()
+    + onTransact()
+    + transact()
+}
+class Proxy {
+    - mRemote : IBinder
+    +asBinder()
+    +getInterfaceDescriptor()
+    +addBook()
+}
+IBinder <|.. Binder
+Binder <|-- Stub
+IBookManager <|.. Stub
+IBookManager <|.. Proxy
+IBinder <-- Proxy
+
+@enduml
