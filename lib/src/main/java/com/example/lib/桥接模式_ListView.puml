@@ -1,0 +1,34 @@
+@startuml
+
+abstract class AbsListView {
+ mAdapter : ListAdapter
+}
+
+class ListView{
+    +setAdapter()
+}
+
+
+interface Adapter{
+    getCount()
+    getItem()
+    getView()
+    registerDataSetObserver()
+    unregisterDataSetObserver()
+}
+
+interface ListAdapter{
+    +areAllItemsEnabled()
+    +isEnabled()
+}
+
+abstract class BaseAdapter{
+
+}
+
+AbsListView<|--  ListView
+Adapter <|-- ListAdapter
+ListAdapter <.. BaseAdapter
+ListAdapter<--  AbsListView
+
+@enduml

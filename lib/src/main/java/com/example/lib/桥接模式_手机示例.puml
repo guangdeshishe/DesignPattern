@@ -1,0 +1,29 @@
+@startuml
+
+abstract class MobilePhone{
+    - mPhoneType : PhoneType
+    setPhoneType()
+}
+
+class XiaoMiMobilePhone{
+}
+
+class HuaWeiMobilePhone{
+}
+
+
+interface PhoneType{
+}
+
+class OldmanPhone{
+}
+class StudentPhone{
+}
+
+MobilePhone <|-- XiaoMiMobilePhone
+MobilePhone <|-- HuaWeiMobilePhone
+PhoneType <|.. OldmanPhone
+PhoneType <|.. StudentPhone
+PhoneType <-- MobilePhone
+
+@enduml
