@@ -1,0 +1,27 @@
+@startuml
+abstract Context{
+    startActivity()
+}
+class ContextImpl {
+    startActivity()
+}
+
+Context <|.. ContextImpl
+
+class ContextWrapper{
+    mBase:Context
+    startActivity()
+}
+class Activity{
+    startActivity()
+}
+class Service{
+    startActivity()
+}
+
+Context <|.. ContextWrapper
+Context <-- ContextWrapper
+ContextWrapper <|-- Activity
+ContextWrapper <|-- Service
+
+@enduml

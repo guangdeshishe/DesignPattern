@@ -1,0 +1,33 @@
+@startuml
+interface Phone{
+    show()
+}
+class XiaoMiPhone {
+    show()
+}
+class HuaWeiPhone{
+    show()
+}
+
+Phone <|.. XiaoMiPhone
+Phone <|.. HuaWeiPhone
+
+abstract class Decorator{
+    phone:Phone
+    show()
+}
+class FilmDecorator{
+    show()
+    addFilm()
+}
+class ShellDecorator{
+    show()
+    addShell()
+}
+
+Phone <|.. Decorator
+Phone <-- Decorator
+Decorator <|-- FilmDecorator
+Decorator <|-- ShellDecorator
+
+@enduml

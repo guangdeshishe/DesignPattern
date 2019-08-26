@@ -9,7 +9,11 @@ package com.example.designpattern.decorator
  */
 class FilmDecorator(phone: Phone) : Decorator(phone) {
     override fun show() {
-        print("贴了膜的 ")
+        addFilm()
         super.show()
+    }
+
+    fun addFilm(){
+        print("贴了膜的 ")
     }
 }

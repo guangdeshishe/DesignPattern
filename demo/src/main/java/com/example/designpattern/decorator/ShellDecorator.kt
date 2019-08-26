@@ -9,7 +9,11 @@ package com.example.designpattern.decorator
  */
 class ShellDecorator(phone: Phone) : Decorator(phone) {
     override fun show() {
-        print("戴了壳的 ")
+        addShell()
         super.show()
+    }
+
+    fun addShell(){
+        print("戴了壳的 ")
     }
 }
