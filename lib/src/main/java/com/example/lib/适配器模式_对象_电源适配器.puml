@@ -1,0 +1,16 @@
+@startuml
+
+class HomeVoltage{
+    + getHomeVoltage()
+}
+interface MobilePhoneVoltage{
+    + getMobilePhoneVoltage()
+}
+
+class VoltageObjectAdapter{
+    homeVoltage : HomeVoltage
+    + getMobilePhoneVoltage()
+}
+HomeVoltage <-- VoltageObjectAdapter
+MobilePhoneVoltage <|.. VoltageObjectAdapter
+@enduml

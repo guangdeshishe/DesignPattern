@@ -1,0 +1,40 @@
+@startuml
+
+interface IFile{
+    +delete()
+    + copy()
+
+    + addFile()
+    + getFile(): IFile
+
+    + getFileName():String
+}
+
+class File{
+    name:String
+    +delete()
+    + copy()
+
+    + addFile()
+    + getFile(): IFile
+
+    + getFileName():String
+}
+
+class Folder{
+    name:String
+    mFiles : ArrayList<IFile>
+
+    +delete()
+    + copy()
+
+    + addFile()
+    + getFile(): IFile
+
+    + getFileName():String
+}
+
+IFile <|.. File
+IFile <|.. Folder
+Folder o-- IFile
+@enduml

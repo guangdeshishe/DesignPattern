@@ -1,0 +1,25 @@
+@startuml
+interface Component{
+    +operation()
+}
+class ConcurrentComponent{
+    +operation()
+}
+abstract class Decorator {
+    - mRealComponent : Component
+    +Decorator()
+    +doDomeThing()
+}
+
+class ConcurrentDecoratorA{
+    +doDomeThing()
+}
+class ConcurrentDecoratorB{
+    +doDomeThing()
+}
+
+Component <|.. ConcurrentComponent
+Decorator <|-- ConcurrentDecoratorA
+Decorator <|-- ConcurrentDecoratorB
+Component <-- Decorator
+@enduml

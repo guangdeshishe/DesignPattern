@@ -1,0 +1,28 @@
+@startuml
+interface Implement{
+    +operation()
+}
+class ConcurrentImplementA{
+    +operation()
+}
+class ConcurrentImplementB{
+    +operation()
+}
+abstract class Abstraction {
+    - mRealImplement : Implement
+    +doDomeThing()
+}
+
+class ReDefineAbstractionA{
+    +doDomeThing()
+}
+class ReDefineAbstractionB{
+    +doDomeThing()
+}
+
+Implement <|.. ConcurrentImplementA
+Implement <|.. ConcurrentImplementB
+Abstraction <|-- ReDefineAbstractionA
+Abstraction <|-- ReDefineAbstractionB
+Implement <-- Abstraction
+@enduml

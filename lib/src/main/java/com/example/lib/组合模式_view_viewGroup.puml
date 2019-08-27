@@ -1,0 +1,70 @@
+@startuml
+
+class View{
+    + onMeasure()
+    + onLayout()
+    + onDraw()
+}
+
+class TextView{
+    + onMeasure()
+    + onLayout()
+    + onDraw()
+}
+
+class ImageView{
+    + onMeasure()
+    + onLayout()
+    + onDraw()
+}
+
+interface ViewManager{
+    + addView()
+    + updateViewLayout()
+    + removeView()
+}
+interface ViewParent{
+    + requestLayout()
+    + getParent()
+    + removeView()
+}
+
+abstract ViewGroup{
+    mChildren : View[]
+
+    + addView()
+    + updateViewLayout()
+    + removeView()
+
+    + requestLayout()
+    + getParent()
+    + removeView()
+}
+class FrameLayout{
+    + addView()
+    + updateViewLayout()
+    + removeView()
+
+    + requestLayout()
+    + getParent()
+    + removeView()
+}
+class LinearLayout{
+    + addView()
+    + updateViewLayout()
+    + removeView()
+
+    + requestLayout()
+    + getParent()
+    + removeView()
+}
+View <|-- TextView
+View <|-- ImageView
+View <|-- ViewGroup
+ViewManager <|.. ViewGroup
+ViewParent <|.. ViewGroup
+ViewGroup o-- View
+ViewGroup <|-- FrameLayout
+ViewGroup <|-- LinearLayout
+
+@enduml
