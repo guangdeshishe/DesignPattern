@@ -1,0 +1,12 @@
+@startuml
+class ChessPieces{
+    -color: String
+    + downPieces(x: Int,y:Int)
+}
+
+class PiecesFactory {
+     -mCachePieces : HashMap<String, ChessPieces>()
+     +getChessPieces(color: String)
+}
+PiecesFactory o-- ChessPieces
+@enduml

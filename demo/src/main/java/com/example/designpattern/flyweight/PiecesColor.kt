@@ -7,9 +7,9 @@ package com.example.designpattern.flyweight
  * @date 2019/6/6
  * @time 19:25
  */
-class PiecesType {
+class PiecesColor {
     companion object{
-        val WHITE =1
-        val BLACK =2
+        val WHITE = "红色"
+        val BLACK = "黑色"
     }
 }

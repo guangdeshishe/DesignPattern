@@ -1,16 +1,16 @@
 package com.example.designpattern.flyweight
 
+import com.example.designpattern.util.Tool
+
 /**
- * 定义棋子的功能
+ * 棋子
  *
  * @author zhujie
  * @date 2019/6/6
- * @time 19:17
+ * @time 19:20
  */
-interface ChessPieces {
-    /**
-     * 落子
-     * @param point 落子坐标，外部状态信息
-     */
-    fun downPieces(point: Point)
+class ChessPieces(private val color: String) {
+    fun downPieces(x: Int, y: Int) {
+        Tool.print("${color}棋子，落子位置：${x},${y}")
+    }
 }

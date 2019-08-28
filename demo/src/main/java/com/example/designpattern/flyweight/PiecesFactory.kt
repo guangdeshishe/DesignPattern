@@ -1,7 +1,5 @@
 package com.example.designpattern.flyweight
 
-import android.util.SparseArray
-
 /**
  * 棋子管理类
  *
@@ -10,20 +8,14 @@ import android.util.SparseArray
  * @time 19:23
  */
 class PiecesFactory {
-    val mCachePieces = HashMap<Int,ChessPieces>()
+    val mCachePieces = HashMap<String, ChessPieces>()
 
-    fun getChessPieces(type: Int): ChessPieces {
-        var chessPieces: ChessPieces? = mCachePieces[type]
+    fun getChessPieces(color: String): ChessPieces {
+        var chessPieces = mCachePieces[color]
         if (chessPieces == null) {
-            when (type) {
-                PiecesType.BLACK -> {
-                    chessPieces = BlackPieces()
-                }
-                PiecesType.WHITE -> {
-                    chessPieces = WhitePieces()
-                }
-            }
+            chessPieces = ChessPieces(color)
+            mCachePieces[color] = chessPieces
         }
-        return chessPieces!!
+        return chessPieces
     }
 }

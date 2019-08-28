@@ -9,17 +9,17 @@ package com.example.designpattern.flyweight
  */
 fun main(args: Array<String>) {
     val factory = PiecesFactory()
-    var chessPieces = factory.getChessPieces(PiecesType.WHITE)
-    chessPieces.downPieces(Point(1, 2))
+    var chessPieces = factory.getChessPieces(PiecesColor.WHITE)
+    chessPieces.downPieces(1, 2)
 
-    chessPieces = factory.getChessPieces(PiecesType.BLACK)
-    chessPieces.downPieces(Point(7, 8))
+    chessPieces = factory.getChessPieces(PiecesColor.BLACK)
+    chessPieces.downPieces(7, 8)
 
-    chessPieces = factory.getChessPieces(PiecesType.WHITE)
-    chessPieces.downPieces(Point(3, 4))
+    chessPieces = factory.getChessPieces(PiecesColor.WHITE)
+    chessPieces.downPieces(3, 4)
 
-    chessPieces = factory.getChessPieces(PiecesType.BLACK)
-    chessPieces.downPieces(Point(9, 10))
+    chessPieces = factory.getChessPieces(PiecesColor.BLACK)
+    chessPieces.downPieces(9, 10)
 
-
+    println("缓存的对象：${factory.mCachePieces}")
 }
