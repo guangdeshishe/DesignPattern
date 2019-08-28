@@ -1,0 +1,34 @@
+@startuml
+
+interface Component{
+     fun run()//启动硬件
+     fun stop()//关闭硬件
+}
+interface IComputer {
+    fun start()//启动电脑
+    fun stop()//关闭电脑
+}
+class Cpu{
+     fun run()
+     fun stop()
+}
+class Screen{
+     fun run()
+     fun stop()
+}
+class Storage{
+     fun run()
+     fun stop()
+}
+class Computer{
+    fun start()//启动电脑
+    fun stop()//关闭电脑
+}
+Component <|.. Cpu
+Component <|.. Screen
+Component <|.. Storage
+IComputer <|.. Computer
+Cpu <-- Computer
+Screen <-- Computer
+Storage <-- Computer
+@enduml
