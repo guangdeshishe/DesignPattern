@@ -1,0 +1,32 @@
+@startuml
+
+interface IFilter {
+     filter():ArrayList<Person>
+}
+class Person{
+    age:Int
+    sex:Int
+}
+class AgeFilter{
+    minAge:Int
+    maxAge:Int
+    filter():ArrayList<Person>
+}
+class SexFilter{
+    sex:Int
+    maxAge:String
+    filter():ArrayList<Person>
+}
+class PersonFilterManager{
+    filters : ArrayList<IFilter>()
+    removeFilter()
+    addFilter()
+    filter():ArrayList<Person>
+}
+IFilter <|.. AgeFilter
+IFilter <|.. SexFilter
+Person <.. AgeFilter
+Person <.. SexFilter
+PersonFilterManager o.. IFilter
+Person <.. PersonFilterManager
+@enduml
