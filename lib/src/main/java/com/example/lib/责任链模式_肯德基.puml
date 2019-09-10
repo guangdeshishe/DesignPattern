@@ -1,0 +1,26 @@
+@startuml
+
+abstract class Shop{
+     mNextShop: Shop//下一家店
+     mDistance: Int//距离
+     mName:String//店名
+     order(): Boolean
+}
+class KfcShop{
+   order(): Boolean
+}
+class Order {
+    mDistance : Int //距离
+}
+class ShopManager {
+    mStartShop : Shop //链首
+    mEndShop: KfcShop//链尾
+    addShop() //添加商店
+    order() //开始下单
+}
+Shop <|-- KfcShop
+Shop <-- KfcShop
+Order <.. ShopManager
+Shop <-- ShopManager
+Order <.. Shop
+@enduml

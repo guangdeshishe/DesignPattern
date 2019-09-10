@@ -1,12 +1,8 @@
 package com.example.designpattern.chainofresponsibility
 
 /**
- * 订单
- *
- * @author zhujie
- * @date 2019/6/6
- * @time 12:02
+ * 订单信息
+ * @param distance 配送位置
  */
-class Order(distance:Int) {
-    val mDistance = distance
+class Order(val distance: Int) {
 }

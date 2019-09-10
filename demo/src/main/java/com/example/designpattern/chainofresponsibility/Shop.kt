@@ -1,12 +1,11 @@
 package com.example.designpattern.chainofresponsibility
 
 /**
- * TODO 请添加说明
- *
- * @author zhujie
- * @date 2019/6/6
- * @time 12:01
+ * 店铺
  */
-interface Shop {
-    fun order(order: Order):Boolean
+abstract class Shop(name: String, distance: Int) {
+    var mNextShop: Shop? = null //下一家分店
+    protected val mDistance = distance//距离
+    protected val mName = name//店名
+    abstract fun order(order: Order): Boolean
 }
